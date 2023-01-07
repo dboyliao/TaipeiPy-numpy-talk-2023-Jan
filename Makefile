@@ -1,3 +1,5 @@
+UPDATE_MESSAGE?='update slides'
+
 slides:
 	jupyter nbconvert \
 	--to slides \
@@ -14,3 +16,7 @@ gh-page-worktree:
 update-slides: gh-page-worktree slides
 	cp NumPy-dark.slides.html worktree/gh-pages/index.html
 	cp images/* worktree/gh-pages/images/
+	@cd worktree/gh-pages; \
+	git add -A; \
+	git commit -m $(UPDATE_MESSAGE); \
+	git push origin gh-pages;
