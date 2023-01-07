@@ -4,6 +4,13 @@ slides:
 	--SlidesExporter.reveal_theme=serif \
 	NumPy-dark.ipynb
 
-update-slides: slides
+gh-page-worktree:
+	@if [ ! -e worktree/gh-pages ]; then \
+		mkdir -p worktree; \
+		git worktree add \
+		--checkout worktree/gh-pages gh-pages; \
+	fi;
+
+update-slides: gh-page-worktree slides
 	cp NumPy-dark.slides.html worktree/gh-pages/index.html
 	cp images/* worktree/gh-pages/images/
