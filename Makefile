@@ -18,5 +18,5 @@ update-slides: gh-page-worktree slides
 	cp images/* worktree/gh-pages/images/
 	@cd worktree/gh-pages; \
 	git add -A; \
-	git commit -m $(UPDATE_MESSAGE); \
+	git commit -m '$(UPDATE_MESSAGE)'; \
 	git push origin gh-pages;
