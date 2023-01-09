@@ -1,4 +1,4 @@
-UPDATE_MESSAGE?='update slides'
+UPDATE_MESSAGE?=update slides
 
 slides:
 	jupyter nbconvert \

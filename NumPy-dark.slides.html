@@ -14851,36 +14851,6 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>invalid 2D array<ul>
-<li>invalid data type</li>
-<li>invalid shape</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>我賭你不敢 😜</p>
-
-</div>
-</div>
-</div>
 </div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -15054,7 +15024,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;memory at 0x108be9220&gt;</pre>
+<pre>&lt;memory at 0x105bc1220&gt;</pre>
 </div>
 
 </div>
@@ -15469,12 +15439,7 @@ div.jp-OutputPrompt {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[[1, 2, 3],
- [4, 5, 6],
- [7, 8, 9],
- [10, 11, 12],
- [13, 14, 15],
- [2251799813685248, 4443883376, 4443831968]]</pre>
+<pre>[[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15], [0, 3, 1]]</pre>
 </div>
 
 </div>
@@ -16219,7 +16184,7 @@ $$
 <li>shape: $(2, 2, 2)$</li>
 </ul>
 </li>
-<li>$\mathbf{strided\_cube}$$[i_0, i_1, i_2]$<ul>
+<li>$\mathbf{strided\_cube}$$[i_0^{\prime}, i_1^{\prime}, i_2^{\prime}]$<ul>
 <li>with linear offset $\text{offset}_e$</li>
 </ul>
 </li>
@@ -16227,8 +16192,9 @@ $$
 <p>Then we have:</p>
 $$
     \begin{align*}
-    \text{offset}_e &amp;= 144 \cdot i_0 + 48 \cdot i_1 + 16 \cdot i_2 \\
-                    &amp;= 72 \cdot (2 \cdot i_0) + 24 \cdot (2 \cdot i_1) + 8 \cdot (2 \cdot i_2)
+    \text{offset}_e &amp;= 144 \cdot i_0^{\prime} + 48 \cdot i_1^{\prime} + 16 \cdot i_2^{\prime} \\
+                    &amp;= 72 \cdot (2 \cdot i_0^{\prime}) + 24 \cdot (2 \cdot i_1^{\prime}) + 8 \cdot (2 \cdot i_2^{\prime}) \\
+                    &amp;= 72 \cdot i_0 + 24 \cdot i_1 + 8 \cdot i_2
     \end{align*}
 $$
 </div>
@@ -16278,7 +16244,7 @@ $$
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(&lt;memory at 0x108ec31f0&gt;, memoryview)</pre>
+<pre>(&lt;memory at 0x105ea31f0&gt;, memoryview)</pre>
 </div>
 
 </div>
@@ -17143,8 +17109,8 @@ $$
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>CPU times: user 195 ms, sys: 19.9 ms, total: 215 ms
-Wall time: 196 ms
+<pre>CPU times: user 186 ms, sys: 22 ms, total: 208 ms
+Wall time: 186 ms
 </pre>
 </div>
 </div>
@@ -17201,8 +17167,8 @@ Wall time: 196 ms
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>CPU times: user 1.81 ms, sys: 1.28 ms, total: 3.09 ms
-Wall time: 1.56 ms
+<pre>CPU times: user 1.81 ms, sys: 1.27 ms, total: 3.09 ms
+Wall time: 2.16 ms
 </pre>
 </div>
 </div>
@@ -17434,6 +17400,7 @@ Wall time: 1.56 ms
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="What's-Missing-in-This-Talk">What's Missing in This Talk<a class="anchor-link" href="#What's-Missing-in-This-Talk">&#182;</a></h1><ul>
+<li><code>ndarray.flags</code> and more other interesting attributes</li>
 <li>row-major v.s column-major array<ul>
 <li>the memory layout of the array</li>
 <li>the impact to the performance</li>
